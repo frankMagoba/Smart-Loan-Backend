@@ -23,6 +23,13 @@ passport.use(new LocalStrategy(
         }
     }
 ));
+passport.serializeUser(function (user, done) {
+    if (user) done(null, user);
+});
+
+passport.deserializeUser(function (id, done) {
+    done(null, id);
+});
 app.post('/authenticate', (req, res) => {
     res.status(200).json({ "statusCode": 200, "message": "hello" });
 });
