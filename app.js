@@ -5,7 +5,13 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const auth = () => {
     return (req, res, next) => {
-        next()
+        passport.authenticate('local', (error, user, info) => {
+            if (error) res.status(400).json({ "statusCode": 200, "message": error });
+            req.login(user, function (error) {
+                if (error) return next(error);
+                next();
+            });
+        })(req, res, next);
     }
 }
 passport.use(new LocalStrategy(
