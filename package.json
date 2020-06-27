@@ -1,0 +1,23 @@
+{
+  "name": "smart-loan-backend",
+  "version": "1.0.0",
+  "description": "Smart loan backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankMagoba/Smart-Loan-Backend.git"
+  },
+  "keywords": [
+    "smart",
+    "loan"
+  ],
+  "author": "franklin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankMagoba/Smart-Loan-Backend/issues"
+  },
+  "homepage": "https://github.com/frankMagoba/Smart-Loan-Backend#readme"
+}
