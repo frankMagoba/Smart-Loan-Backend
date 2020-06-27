@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/frankMagoba/Smart-Loan-Backend/issues"
   },
-  "homepage": "https://github.com/frankMagoba/Smart-Loan-Backend#readme"
+  "homepage": "https://github.com/frankMagoba/Smart-Loan-Backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
