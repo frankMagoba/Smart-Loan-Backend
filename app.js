@@ -16,6 +16,13 @@ const auth = () => {
         })(req, res, next);
     }
 }
+
+const isLoggedIn = (req, res, next) => {
+    if (req.isAuthenticated()) {
+        return next()
+    }
+    return res.status(400).json({ "statusCode": 400, "message": "not authenticated" })
+}
 passport.use(new LocalStrategy(
     function (username, password, done) {
         if (username === "admin" && password === "admin") {
@@ -35,6 +42,9 @@ passport.deserializeUser(function (id, done) {
 app.post('/authenticate', (req, res) => {
     res.status(200).json({ "statusCode": 200, "message": "hello" });
 });
+app.get('/getData', isLoggedIn, (req, res) => {
+    res.json("data")
+})
 
 app.listen(3000, () => {
     console.log('App running at 3000')
